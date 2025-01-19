@@ -26,8 +26,8 @@ export default function App() {
         setLocation(location.coords);
         const data = await getWeatherLocation(location.coords);
         setWeather({ temp: data.main.temp, description: data.weather[0].description });
-        // setCondition(data.weather[0].main);
-        setCondition('Clear');
+        setCondition(data.weather[0].main);
+        // setCondition('Clouds');
 
       } catch (error) {
         Alert.alert("Error", "An error occurred while getting location");
